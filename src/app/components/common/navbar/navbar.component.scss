@@ -1,0 +1,12 @@
+@import "../../../../styles.scss";
+:host{
+    .nav-wrapper{
+        background-color: $secondryColor;
+        color: $textColor;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 1rem 3rem;
+    }
+}
