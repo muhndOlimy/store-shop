@@ -1,4 +1,5 @@
-@import "bootstrap/dist/css/bootstrap-reboot.css";
+@layer bootstrap-reboot, primeng;
+@import "bootstrap/dist/css/bootstrap-reboot.css" layer(bootstrap-rebooot);
 @import "primeicons/primeicons.css";
 
 $primaryColor:#002985;
