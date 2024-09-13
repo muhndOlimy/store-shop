@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@layer bootstrap-reboot, primeng;
+@import "bootstrap/dist/css/bootstrap-reboot.css" layer(bootstrap-rebooot);
+@import "primeicons/primeicons.css";
+
+$primaryColor:#002985;
+$secondryColor: #E6ECFC;
+$textColor: #101828;
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: "Inter", system-ui;
+    font-style: normal;
+}

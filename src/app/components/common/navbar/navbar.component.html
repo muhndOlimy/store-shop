@@ -1,0 +1,12 @@
+<div class="container-fluid g-0">
+    <div class="nav-wrapper">
+
+       @for (category of categories; track category) {
+        <div class="nav-item">
+            {{ category }}
+       </div>
+        } @empty {
+        <li>There are no Categories at the moment.</li>
+        }
+    </div>
+</div>

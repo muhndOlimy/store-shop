@@ -1,0 +1,42 @@
+@import "../../../../styles.scss";
+:host{
+    .header-wrapper{
+        background-color: $primaryColor;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem 3rem;
+        .logo{
+            img{
+                width: 10rem;
+            }
+        }
+
+        .searchbar{
+            flex-grow: 1;
+            .input{
+                width: 100%;
+                display: block;
+            }
+        }
+
+        .wishlist , .cart{
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            i{
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+
+
+
+
+
+}
