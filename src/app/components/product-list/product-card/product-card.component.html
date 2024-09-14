@@ -1,0 +1,25 @@
+<div class="product-card">
+    <div class="thumbnail">
+        <img [src]="product.thumbnail" [alt]="product.title">
+    </div>
+    <div class="details">
+        <p class="title">
+            {{product.title.slice(0,20)}}
+        </p>
+        <div class="footer">
+            <div class="price">
+                <span>EGP</span>
+                {{product.price}}
+            </div>
+            <div class="rating">
+                <i class="pi pi-star-fill" style="color:#fac516"></i>
+                <div>
+                    {{product.rating}}
+                </div>
+                <span>
+                    ({{product.reviews?.length}})
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
