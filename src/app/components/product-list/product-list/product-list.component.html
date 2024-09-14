@@ -1,18 +1,24 @@
 <div class="product-list-wrapper">
     <h2 class="title">
-        <span>136 Results for</span>
+        <span>{{productsData?.total}} Results for</span>
         "Electronics & Mobiles in Egypt"
     </h2>
 
     <div class="products-list">
         <div class="container-fluid">
             <div class="row row-cols-5 justify-content-start g-5">
-                @for(product of (products$ | async)?.products; track product.id;) {
+                @for(product of productsData?.products; track product.id;) {
                     <div class="product-item col">
                         <app-product-card [product]="product" (click)="navigateToDetails(product.id)"/>
                     </div>
                 } 
             </div>
+
+            <p-paginator 
+                (onPageChange)="onPageChange($event)" 
+                [first]="0"
+                [rows]="20" 
+                [totalRecords]="productsData?.total" />
         </div>
         
     </div>
