@@ -5,6 +5,8 @@
 $primaryColor:#002985;
 $secondryColor: #E6ECFC;
 $textColor: #101828;
+$secondryTextColor:grey;
+$mainBgColor:#F9FAFB;
 
 html{
     font-size: 10px;
@@ -13,4 +15,10 @@ html{
 body{
     font-family: "Inter", system-ui;
     font-style: normal;
+    margin: 0;
+    background-color: $mainBgColor;
+}
+
+.page-wrapper{
+    padding: 0 3rem;
 }
