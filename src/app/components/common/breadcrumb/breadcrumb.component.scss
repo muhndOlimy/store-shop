@@ -1,0 +1,14 @@
+:host{
+    .breadcrumb-wrapper{
+        padding-inline: 2rem;
+        padding-block: 2rem;
+    }
+
+    ::ng-deep{
+        .p-breadcrumb{
+            border: none;
+            background-color: transparent;
+            font-size: 1.4rem;
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<div class="filter-wrapper">
+    <div class="filter-item">
+        <h3 class="title">
+            Category
+        </h3>
+        <ul class="categories-body">
+            @for (category of categories; track category; let isFirst = $first) {
+                <li [ngClass]="{'selected':isFirst}">
+                    {{category}}
+                </li>
+            } 
+        </ul>
+    </div>
+
+    <div class="filter-item">
+        <h3 class="title">
+            Brand
+        </h3>
+        <div class="checkboxs-body">
+            
+
+            @for (brand of brands; track brand.title;) {
+                <div class="checkbox">
+                    <p-checkbox [label]="brand.title" [name]="brand.title" [value]="brand.title" />
+                    <p-badge [value]="brand.count" severity="secondary" badgeSize="large" />
+                </div>
+
+            } 
+        </div>
+    </div>
+
+    <div class="filter-item">
+        <h3 class="title">
+            Price Range (EGP)
+        </h3>
+
+
+        <div class="price-range-body">
+        
+            <div>From</div>
+
+            <p-inputNumber [(ngModel)]="minPrice" mode="decimal" inputId="withoutgrouping" [useGrouping]="false" />
+        
+            <div>To</div>
+        
+            <p-inputNumber [(ngModel)]="maxPrice" mode="decimal" inputId="withoutgrouping" [useGrouping]="false" />
+        
+        </div>
+    </div>
+
+    <div class="filter-item">
+        <h3 class="title">
+            Product Rating
+        </h3>
+
+        <div class="rating-body">
+            <p-slider [(ngModel)]="rating" [range]="true" min="1" max="5"/>
+            <div class="rating-hint">
+                <span>1 Star</span>
+                <span>5 Star</span>
+            </div>
+        </div>
+    </div>
+</div>

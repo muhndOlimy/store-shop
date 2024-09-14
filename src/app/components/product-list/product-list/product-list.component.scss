@@ -1,0 +1,10 @@
+@import "../../../../styles.scss";
+:host{
+    .title{
+        font-size: 1.6rem;
+        span{
+            color: $secondryTextColor;
+            font-weight: 300;
+        }
+    }
+}
