@@ -37,3 +37,10 @@ export interface Product {
   thumbnail: string;
   images: string[];
 }
+
+export interface ProductData{
+  products:Product[],
+  total:number,
+  skip:number,
+  limit:number
+}
