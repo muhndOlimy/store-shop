@@ -1,0 +1,181 @@
+:host{
+
+
+    .product-header{
+        margin: 3rem 0;
+    }
+
+    .info{
+        .title{
+            font-size: 2.4rem;
+            font-weight: 500;
+            color:#344054 ;
+        }
+
+        .breif{
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #98A2B3;
+
+        }
+
+        .price{
+            font-size: 2.2rem;
+            font-weight: 700;
+            color:#1D2939;
+            margin-inline: 0.5rem;
+            margin-bottom: 2rem;
+            span{
+                color: #98A2B3;
+                font-size: 1.5rem;
+                font-weight: 500;
+            }
+        }
+
+        .rating{
+            border: 1px solid #EAECF0;
+            border-radius: 8px;
+            padding: 0.25rem 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #667085;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 5rem;
+            margin-bottom: 1.5rem;
+            span{
+                color:#D0D5DD ;
+            }
+        }
+
+        .delivery{
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #667085;
+            box-shadow: 0px 0px 32px 0px #0000000D;
+            border-radius: 5px;
+            background-color: #FFFFFF;
+            margin-bottom: 1.5rem;
+            padding: 1rem 2rem;
+            width: fit-content;
+            div{
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #1D2939;
+            }
+        }
+
+        .installment{
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #667085;
+            background-color: #FEFBE8;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+            padding: 1rem 2rem;
+            width: fit-content;
+            span{
+                font-size: 1.1rem;
+                font-weight: 700;
+                color: #1D2939;
+                text-decoration: underline;
+            }
+        }
+
+        .valu-ad{
+            margin-bottom: 1.5rem;
+        }
+
+        .quantity{
+            button{
+                font-size: 1.6rem;
+                font-weight: 500;
+                color: #ffffff;
+                border-radius: 5px;
+                background-color: #002985;
+                padding: 2rem;
+                width: 50%;
+            }
+        }
+    }
+
+    .policies{
+        .policy-item{
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 1rem;
+            margin: 3rem 0;
+            img{
+                height: 100%;
+            }
+            div{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+            }
+            h6{
+                font-size: 1.2rem;
+                font-weight: 600;
+                color: #344054;
+                margin: 0;
+                margin-bottom: 0.5rem;
+            }
+            p{
+                color: #7E859B;
+                font-size: 1.4rem;
+                font-weight: 400;
+                margin: 0;
+            }
+        }
+    }
+
+    .overview , .highlights{
+        border: 1px solid #EAECF0;
+        padding: 1.5em 3rem;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+        h3.title{
+            font-size: 1.8rem;
+            font-weight: 700;
+            color:#344054;            
+        }
+        li , p{
+            font-size: 1.8rem;
+            color: #98A2B3;
+            line-height: 3rem;
+        }
+    }
+
+    ::ng-deep{
+        .p-galleria .p-galleria-thumbnail-container{
+            background-color: transparent;
+            justify-content: space-between;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .p-galleria-thumbnail-items-container{
+            height: 100% !important;
+        }
+        .p-galleria-thumbnail-items{
+            justify-content: space-between;
+        }
+        .p-galleria-thumbnail-prev, .p-galleria-thumbnail-next{
+            display: none;
+        }
+        .p-galleria-thumbnail-item{
+            img{
+                width: 100%;
+            }
+        }
+        p-galleriathumbnails{
+            flex-basis: 20%;
+        }
+        p-galleriaitem{
+            flex-basis: 80%;
+        }
+    }
+}
