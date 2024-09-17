@@ -1,5 +1,6 @@
-import { Product } from "./products.interfaces";
+import { Product, ProductData } from "./products.interfaces";
 
 export interface AppStore {
-    cart:Product[]
+    cart:Product[],
+    productsData:ProductData
 }
