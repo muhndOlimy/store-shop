@@ -1,0 +1,15 @@
+<div class="cart-list-wrapper">
+    @for(item of cartList; track item.id;) {
+        <div class="cart-item">
+            <div class="thumbnail">
+                <img [src]="item.thumbnail" [alt]="item.title">
+            </div>
+            <h3 class="title">
+                {{item.title}}
+            </h3>
+            <div class="quantity">
+                {{item.count}}
+            </div>
+        </div>
+    } 
+</div>
