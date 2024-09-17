@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './components/common/search-bar/header.component';
+import { HeaderComponent } from './components/common/header/header.component';
 import { NavbarComponent } from "./components/common/navbar/navbar.component";
 import { BreadcrumbComponent } from './components/common/breadcrumb/breadcrumb.component';
 
