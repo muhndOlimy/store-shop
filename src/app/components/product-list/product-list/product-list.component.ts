@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { ProductsFetchingService } from '../../../services/products.fetching.service';
-import { Observable, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { ProductCardComponent } from "../product-card/product-card.component";
 import { Router } from '@angular/router';
 import { PaginatorModule } from 'primeng/paginator';
 import { ProductData } from '../../../interfaces/products.interfaces';
+import { Store } from '@ngrx/store';
+import { selectProductData } from '../../../store/products/products.selectors';
+import { loadProducts } from '../../../store/products/products.actions';
 
 @Component({
   selector: 'app-product-list',
@@ -16,13 +17,15 @@ import { ProductData } from '../../../interfaces/products.interfaces';
 })
 export class ProductListComponent {
 
-  productsSub$!:Subscription;
   productsData!:ProductData | null;
-  private _productsFetchingService = inject(ProductsFetchingService);
   private _router = inject(Router);
+  private _store = inject(Store);
 
   ngOnInit(){
-    this.fetchProductsData(0);
+    this.fetchProductsData(0 , 20);
+    this._store.select(selectProductData).subscribe((data=>{
+      this.productsData = data
+    }))
   }
 
   navigateToDetails(id:number):void{
@@ -30,16 +33,10 @@ export class ProductListComponent {
   }
 
   onPageChange(event:any){
-    this.fetchProductsData(event.first);
+    this.fetchProductsData(event.first , event.rows);
   }
 
-  fetchProductsData(skip:number){
-    this.productsSub$ = this._productsFetchingService.getProducts(skip).subscribe((data)=>{
-      this.productsData = data;
-    });
-  }
-
-  ngOnDestory(){
-    if(this.productsSub$) this.productsSub$.unsubscribe()
+  fetchProductsData(skip:number , limit:number){
+    this._store.dispatch(loadProducts({skip , limit}));
   }
 }
