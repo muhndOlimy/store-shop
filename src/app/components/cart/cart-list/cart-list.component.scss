@@ -1,0 +1,31 @@
+@import "../../../../styles.scss";
+:host{
+    .cart-list-wrapper{
+        padding: 1rem;
+        font-size: 1.6rem;
+        max-height: 60vh;
+        overflow-y: scroll;
+        .cart-item{
+            border: 1px solid $primaryColor;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+            .thumbnail{
+                flex-basis: 25%;
+                height: 10rem;
+                img{
+                    height: 100%;
+                }
+            }
+            .title{
+                flex-basis: 55%;
+            }
+            .quantity{
+                flex-basis: 20%;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+<div class="cart-list-wrapper">
+    @for(item of cartList; track item) {
+        <div class="cart-item">
+            <div class="thumbnail">
+                <img [src]="item.thumbnail" [alt]="item.title">
+            </div>
+            <h3 class="title">
+                {{item.title}}
+            </h3>
+        </div>
+    }
+    @if(cartList.length == 0){
+        <h5>No items added to cart yet</h5>
+    }
+</div>

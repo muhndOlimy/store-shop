@@ -4,12 +4,14 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { loadProducts } from '../../../store/products/products.actions';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { NgClass } from '@angular/common';
+import { CartListComponent } from "../../cart/cart-list/cart-list.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [IconFieldModule,InputIconModule,InputTextModule,NgClass],
+  imports: [IconFieldModule, InputIconModule, InputTextModule, NgClass, OverlayPanelModule, CartListComponent],
   templateUrl: './header.component..html',
   styleUrl: './header.component.scss'
 })
