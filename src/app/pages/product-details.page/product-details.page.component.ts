@@ -5,7 +5,8 @@ import { ButtonModule } from 'primeng/button';
 import { ProductsFetchingService } from '../../services/products.fetching.service';
 import { Observable } from 'rxjs';
 import { Product } from '../../interfaces/products.interfaces';
-
+import { Store } from '@ngrx/store';
+import { addToCart } from '../../store/cart/cart.actions';
 
 @Component({
   selector: 'app-product-details-page',
@@ -17,6 +18,7 @@ import { Product } from '../../interfaces/products.interfaces';
 export class ProductDetailsPageComponent {
 
   private _productsFetchingService = inject(ProductsFetchingService);
+  private _store = inject(Store)
   product$!:Observable<Product>;
   @Input() productId!: number;
 
@@ -25,24 +27,7 @@ export class ProductDetailsPageComponent {
     this.product$ = this._productsFetchingService.getProductsById(this.productId);
   }
 
-  images:any[]=[
-    {
-      itemImageSrc: 'assets/placeholder.jpg',
-      thumbnailImageSrc: 'assets/placeholder.jpg',
-      alt: 'Description for Image 1',
-      title: 'Title 1'
-    },
-    {
-      itemImageSrc: 'assets/placeholder.jpg',
-      thumbnailImageSrc: 'assets/placeholder.jpg',
-      alt: 'Description for Image 1',
-      title: 'Title 1'
-    },
-    {
-      itemImageSrc: 'assets/placeholder.jpg',
-      thumbnailImageSrc: 'assets/placeholder.jpg',
-      alt: 'Description for Image 1',
-      title: 'Title 1'
-    }
-  ]
+  AddToCart(product:Product){
+    this._store.dispatch(addToCart(product));
+  }
 }
