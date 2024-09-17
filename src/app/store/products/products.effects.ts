@@ -19,7 +19,6 @@ export class ProductsEffects{
                 const cacheKey = localStorage.getItem(JSON.stringify({skip , limit}));
                 const cachedProducts = cacheKey ? JSON.parse(cacheKey) : null;
                 if(canCache && cachedProducts && cachedProducts.timestamp >= Date.now()){
-                    console.log("cached")
                     return of(loadProductsSuccess(cachedProducts))
                 }
                 return this._productsService.getProducts(skip,limit,query).pipe(
