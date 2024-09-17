@@ -7,6 +7,7 @@ import { loadProducts } from '../../../store/products/products.actions';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { NgClass } from '@angular/common';
 import { CartListComponent } from "../../cart/cart-list/cart-list.component";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -18,6 +19,7 @@ import { CartListComponent } from "../../cart/cart-list/cart-list.component";
 export class HeaderComponent {
 
   private _store = inject(Store);
+  private _router = inject(Router);
   isInvalidSearch:boolean = false;
 
   search(event:any):void{
@@ -29,5 +31,9 @@ export class HeaderComponent {
       this.isInvalidSearch = true;
     }
 
+  }
+
+  navigateToMain():void{
+    this._router.navigateByUrl(`/`)
   }
 }
