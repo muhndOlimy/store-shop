@@ -56,7 +56,7 @@ Other folder like services, interfaces, etc contains files of same type divied a
 │   │   │       ├── navbar.component.html
 │   │   │       ├── navbar.component.scss
 │   │   │       └── navbar.component.ts
-│   │   └── product-list
+│   │   └── product
 │   │       ├── filter-menu
 │   │       │   ├── filter-menu.component.html
 │   │       │   ├── filter-menu.component.scss
