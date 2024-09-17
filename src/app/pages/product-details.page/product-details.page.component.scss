@@ -85,6 +85,9 @@
 
         .valu-ad{
             margin-bottom: 1.5rem;
+            img{
+                width: 100%;
+            }
         }
 
         .quantity{
@@ -189,4 +192,24 @@
             flex-basis: 80%;
         }
     }
+}
+
+
+@media only screen and (max-width: 992px){
+
+    :host{
+    
+        .info{
+            order: 1;
+        }
+    
+        .policies{
+            order: 3;
+        }
+
+        .gallery{
+            order: 2;
+        }
+    }
+
 }

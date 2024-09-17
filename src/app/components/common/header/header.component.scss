@@ -5,6 +5,7 @@
         color: #fff;
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
         padding: 1rem 3rem;
@@ -33,10 +34,27 @@
             }
         }
     }
+}
 
+@media only screen and (max-width: 900px){
+    :host{
+        .header-wrapper{
+            padding: 1rem;
+            .logo{
+                order: 1;
+            }
+    
+            .searchbar{
+                order: 4;
+            }
+    
+            .wishlist{
+                order: 2;
+            }
 
-
-
-
-
+            .cart{
+                order: 3;
+            }
+        }
+    }
 }

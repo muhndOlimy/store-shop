@@ -4,7 +4,7 @@
             
             <div class="product-header row g-5">
     
-                <div class="gallery col-4">
+                <div class="gallery col-lg-4 col-md-12">
                     <p-galleria [value]="product.images" thumbnailsPosition="left" [numVisible]="1">
                         <ng-template pTemplate="item" let-item>
                             <img [src]="item" style="width: 100%; min-height: 420px; display: block;" />
@@ -17,7 +17,7 @@
                     </p-galleria>
                 </div>
     
-                <div class="info col-5">
+                <div class="info col-lg-5 col-md-12">
                     <h2 class="title">
                         {{product.title}}
                     </h2>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
     
-                <div class="policies col-3">
+                <div class="policies col-lg-3 col-md-12">
                     <div class="policy-item">
                         <img src="assets/policy-return.png" alt="Return Icon">
                         <div>
