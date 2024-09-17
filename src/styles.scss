@@ -22,3 +22,23 @@ body{
 .page-wrapper{
     padding: 0 3rem;
 }
+
+
+
+@media only screen and (max-width: 1600px) {
+    html{
+        font-size:8px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    html{
+        font-size:10px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    html{
+        font-size:12px;
+    }
+}
