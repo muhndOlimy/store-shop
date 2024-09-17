@@ -13,9 +13,12 @@
             <i class="pi pi-bookmark"></i>
             <span>Wishlist</span>
         </div>
-        <div class="cart">
+        <div class="cart" (click)="cartList.toggle($event)">
             <i class="pi pi-shopping-cart"></i>
             <span>Cart</span>
         </div>
+        <p-overlayPanel #cartList>
+            <app-cart-list/>
+        </p-overlayPanel>
     </div>
 </div>
