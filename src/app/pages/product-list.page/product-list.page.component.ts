@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { FilterMenuComponent } from "../../components/product-list/filter-menu/filter-menu.component";
-import { ProductListComponent } from '../../components/product-list/product-list/product-list.component';
+import { FilterMenuComponent } from "../../components/products/filter-menu/filter-menu.component";
+import { ProductListComponent } from '../../components/products/product-list/product-list.component';
 
 @Component({
   selector: 'app-product-list-page',
