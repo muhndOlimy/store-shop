@@ -2,7 +2,7 @@ import { inject, Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ProductsFetchingService } from "../../services/products.fetching.service";
 import { loadProducts, loadProductsFailure, loadProductsSuccess } from "./products.actions";
-import { catchError, map , of, switchMap } from "rxjs";
+import { catchError, debounce, debounceTime, map , of, switchMap } from "rxjs";
 
 @Injectable()
 export class ProductsEffects{
@@ -14,15 +14,20 @@ export class ProductsEffects{
     fetchProducts = createEffect(() =>
         this._actions.pipe(
             ofType(loadProducts),
-            switchMap(({skip , limit}) => {
-                const isProductsCached = localStorage.getItem(JSON.stringify({skip , limit}));
-                const cachedProducts = isProductsCached ? JSON.parse(isProductsCached) : null;
-                if(cachedProducts && cachedProducts.timestamp >= Date.now()){
+            switchMap(({skip , limit, query}) => {
+                const canCache = query === '';
+                const cacheKey = localStorage.getItem(JSON.stringify({skip , limit}));
+                const cachedProducts = cacheKey ? JSON.parse(cacheKey) : null;
+                if(canCache && cachedProducts && cachedProducts.timestamp >= Date.now()){
+                    console.log("cached")
                     return of(loadProductsSuccess(cachedProducts))
                 }
-                return this._productsService.getProducts(skip,limit).pipe(
+                return this._productsService.getProducts(skip,limit,query).pipe(
+                    debounceTime(5000),
                     map((productsData)=>{
-                        localStorage.setItem(JSON.stringify({skip , limit}), JSON.stringify({...productsData , timestamp:(Date.now() + (this._cachedIntervalByMin*60*1000))}));
+                        if(canCache){
+                            localStorage.setItem(JSON.stringify({skip , limit}), JSON.stringify({...productsData , timestamp:(Date.now() + (this._cachedIntervalByMin*60*1000))}));
+                        }
                         return loadProductsSuccess(productsData)
                     }),
                     catchError((error)=> of(loadProductsFailure({error})))

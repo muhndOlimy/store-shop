@@ -36,7 +36,7 @@ export class ProductListComponent {
     this.fetchProductsData(event.first , event.rows);
   }
 
-  fetchProductsData(skip:number , limit:number){
-    this._store.dispatch(loadProducts({skip , limit}));
+  fetchProductsData(skip:number , limit:number , query:string = ''){
+    this._store.dispatch(loadProducts({skip , limit , query}));
   }
 }

@@ -11,8 +11,8 @@ export class ProductsFetchingService {
   private _http = inject(HttpClient);
 
 
-  getProducts(skip:number, limit:number):Observable<ProductData>{
-    return this._http.get<ProductData>(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`);
+  getProducts(skip:number, limit:number , query:string):Observable<ProductData>{
+    return this._http.get<ProductData>(`https://dummyjson.com/products/search?limit=${limit}&skip=${skip}&q=${query}`);
   }
 
   getProductsById(id:number):Observable<Product>{

@@ -6,7 +6,7 @@
         <div class="searchbar">
             <p-iconField iconPosition="left">
                 <p-inputIcon styleClass="pi pi-search" />
-                <input type="text" [style]="{'width':'100%'}" pInputText placeholder="search for product" />
+                <input (input)="search($event)" type="text" [style]="{'width':'100%'}" pInputText placeholder="search for product"  [ngClass]="{'ng-invalid ng-dirty' : isInvalidSearch}"/>
             </p-iconField>
         </div>
         <div class="wishlist">
