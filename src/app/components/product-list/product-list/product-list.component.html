@@ -6,7 +6,7 @@
 
     <div class="products-list">
         <div class="container-fluid">
-            <div class="row row-cols-5 justify-content-start g-5">
+            <div class="row row-cols-lg-5 row-cols-md-3 row-cols-sm-2 row-cols-xs-1 justify-content-start g-5">
                 @for(product of productsData?.products; track product.id;) {
                     <div class="product-item col">
                         <app-product-card [product]="product" (click)="navigateToDetails(product.id)"/>
